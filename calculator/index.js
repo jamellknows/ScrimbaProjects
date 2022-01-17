@@ -1,7 +1,7 @@
 let el1 = document.getElementById("num1-el");
 let el2 = document.getElementById("num2-el");
-let num1 = Number(el1);
-let num2 = Number(el2);
+// let num1 = parseInt(el1, 10);
+// let num2 = parseInt(el2, 10);
 let sum;
 let el;
 el = el1;
@@ -23,24 +23,37 @@ function clear(){
 
 function add(){
     change();
-    let result =  num1 + num2;
-    // sum = result;
-    // document.getElementById("sum-el").innerText = result;
+    el2.innerText = el.innerText;
+    let result =  Number(el1.innerText) + Number(el2.innerText);
+    console.log(result);
+    sum = result;
+ 
 }
 
 function sub()
 {
     change();
-    let result = num1 - num2;
+    let result = el1 - el2;
+    sum = result;
 
-    // sum = result;
-    // document.getElementById("sum-el").innerText = result;
+}
+
+function mul(){
+    change();
+    let result = el1 * el2;
+    sum = result;
+}
+
+function div()
+{
+    change();
+    let result = el1 /el2;
+    sum = result;
 }
 function equals()
 {
-    add();
-    sub();
-    document.getElementById("sum-el").innerText = result;
+    console.log(sum);
+    document.getElementById("sum-el").innerText = sum;
 
 }
 
